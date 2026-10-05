@@ -1,5 +1,8 @@
-resources/credentials.json
-resources/userdata/*
-*.pyc
-*.db
-!resources/sample-credentials.json
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.sqlite
+.env
+.idea/
+.vscode/

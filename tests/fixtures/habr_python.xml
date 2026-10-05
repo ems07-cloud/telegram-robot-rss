@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" >
+
+  <channel>
+    <title><![CDATA[Все статьи подряд / Python / Хабр]]></title>
+    <link>https://habr.com/ru/hubs/python/articles/</link>
+    <description><![CDATA[Python – высокоуровневый язык программирования]]></description>
+    <language>ru</language>
+    <managingEditor>editor@habr.com</managingEditor>
+    <generator>habr.com</generator>
+    <pubDate>Mon, 05 Oct 2026 17:56:46 GMT</pubDate>
+    
+    
+      <image>
+        <link>https://habr.com/ru/</link>
+        <url>https://habrastorage.org/webt/ym/el/wk/ymelwk3zy1gawz4nkejl_-ammtc.png</url>
+        <title>Хабр</title>
+      </image>
+    
+
+    
+      
+        
+    
+    <item>
+      <title><![CDATA[Используем ISD для защищенной персонализации Java Card апплета]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090692/</guid>
+      <link>https://habr.com/ru/articles/1090692/?utm_campaign=1090692&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/ab8/eb2/526/ab8eb25266a603e4eafc30348a063294.png" /><p>Всем привет!</p><p>В статье «Асимметричная криптография в JavaCard» приводится пример создания канала защищенного обмена сообщениями на сессионных симметричных ключах, вырабатываемых по протоколу ECDH. У этого решения есть два спорных момента: во-первых, сама реализация потребует дополнительных ресурсов на тщательное тестирование, а во-вторых ECDH не обеспечивает аутентификацию сторон. Этот пункт более актуален, т.к. без поддержки апплетом инфраструктуры открытых ключей (PKI) и цифровых сертификатов, он выдаст секреты любому, кто знает параметры эллиптической кривой. Т.е. нужна еще куча времени на разработку и отладку. Преодолеть эти сложности можно одним элегантным решением: использовать механизмы безопасности, предоставляемые «главным по карте» - Issuer Security Domain.</p> <a href="https://habr.com/ru/articles/1090692/?utm_campaign=1090692&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 17:55:10 GMT</pubDate>
+      <dc:creator><![CDATA[void-deref]]></dc:creator>
+      
+      <category><![CDATA[java card]]></category><category><![CDATA[globalplatform]]></category><category><![CDATA[fungp]]></category><category><![CDATA[криптография]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Голосовой робот для записи в салон красоты]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/exolve/articles/1090650/</guid>
+      <link>https://habr.com/ru/companies/exolve/articles/1090650/?utm_campaign=1090650&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/e15/673/7a7/e156737a7e5f8fe73c811c5e018793ee.png" /><p>В салонах красоты администраторы вручную обрабатывают записи клиентов к специалистам. Если сотрудник занят или отлучился, пропущенный звонок превращается в упущенную выручку.</p><p>В статье соберём решение, которое автоматически записывает клиентов к мастерам по телефону без участия персонала.</p> <a href="https://habr.com/ru/articles/1090650/?utm_campaign=1090650&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 15:47:37 GMT</pubDate>
+      <dc:creator><![CDATA[Katner (Exolve)]]></dc:creator>
+      
+      <category><![CDATA[салон красоты]]></category><category><![CDATA[голосовой ассистент]]></category><category><![CDATA[бронирование]]></category><category><![CDATA[автоматизация бизнеса]]></category><category><![CDATA[google calendar]]></category><category><![CDATA[голосовой робот]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как я вычищал ИИ‑маркеры из текстов Claude: промпт, второй проход и регулярка]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090616/</guid>
+      <link>https://habr.com/ru/articles/1090616/?utm_campaign=1090616&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<p>Нейросеть пишет грамотно, и именно поэтому её текст узнаётся с&nbsp;первой строки: длинные тире, конструкции «дело не&nbsp;в&nbsp;X, а&nbsp;в&nbsp;Y», «важно понимать», «давайте разберёмся». Я столкнулся с&nbsp;этим на&nbsp;Телеграм‑боте, который превращает голосовые сообщения в&nbsp;сценарии для&nbsp;соцсетей, и чинил проблему в&nbsp;три слоя за&nbsp;один день. В&nbsp;статье разберу, как&nbsp;устроен пайплайн бота, почему просьбы в&nbsp;промпте не&nbsp;хватило, почему второй проход нейросети тоже не&nbsp;спас и что&nbsp;в&nbsp;итоге закрыло задачу. Весь код ниже взят из&nbsp;рабочего репозитория, имена переменных я чуть упростил.</p> <a href="https://habr.com/ru/articles/1090616/?utm_campaign=1090616&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 14:51:32 GMT</pubDate>
+      <dc:creator><![CDATA[emil_easy]]></dc:creator>
+      
+      <category><![CDATA[telegram bot]]></category><category><![CDATA[aiogram]]></category><category><![CDATA[claude api]]></category><category><![CDATA[whisper]]></category><category><![CDATA[groq]]></category><category><![CDATA[регулярные выражения]]></category><category><![CDATA[промпт-инжиниринг]]></category><category><![CDATA[ИИ-маркеры]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Мультитенантный мост MAX Telegram: self‑hosted бот, к которому каждый подключает свой аккаунт]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090530/</guid>
+      <link>https://habr.com/ru/articles/1090530/?utm_campaign=1090530&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<p>MAX&nbsp;— российский мессенджер, и многие вынуждены в&nbsp;нём сидеть (рабочие чаты, школы, госструктуры), но&nbsp;живут в&nbsp;Telegram. Готовых мостов мало, и почти все рассчитаны на&nbsp;одного пользователя: ты сам разворачиваешь сервер и подключаешь только себя.</p><p>Я сделал мост, у&nbsp;которого одно развёртывание обслуживает нескольких людей: каждый заходит в&nbsp;бота в&nbsp;Telegram, привязывает свой MAX‑аккаунт и получает свою отдельную супергруппу. Данные пользователей друг от&nbsp;друга изолированы.</p> <a href="https://habr.com/ru/articles/1090530/?utm_campaign=1090530&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 12:24:34 GMT</pubDate>
+      <dc:creator><![CDATA[Balonchik1]]></dc:creator>
+      
+      <category><![CDATA[max]]></category><category><![CDATA[telegram]]></category><category><![CDATA[bridge]]></category><category><![CDATA[pymax]]></category><category><![CDATA[aiogram]]></category><category><![CDATA[self-hosted]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как я собирал ERP контур из 5 продуктов для строительной компании]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090526/</guid>
+      <link>https://habr.com/ru/articles/1090526/?utm_campaign=1090526&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/b89/636/46f/b8963646fc1ceb98c787a4b2e38e7426.png" /><p>Хотел разобраться с&nbsp;одним, казалось&nbsp;бы, простым вопросом: за&nbsp;что&nbsp;мы заплатили подрядчику? Платёж&nbsp;был в 1С, заявка&nbsp;была в&nbsp;Bitrix24, а&nbsp;договор и акты приходилось искать среди вложений. С&nbsp;поиска этой связи начался финансовый сервис, а&nbsp;вокруг него постепенно появились ещё четыре продукта. Расскажу, как&nbsp;они складываются в&nbsp;ERP‑контур для&nbsp;стройки, что&nbsp;уже работает и где автоматизация пока может уверенно ошибиться. </p> <a href="https://habr.com/ru/articles/1090526/?utm_campaign=1090526&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 12:16:46 GMT</pubDate>
+      <dc:creator><![CDATA[Nsaff]]></dc:creator>
+      
+      <category><![CDATA[ERP в строительстве]]></category><category><![CDATA[автоматизация строительства]]></category><category><![CDATA[1С]]></category><category><![CDATA[Bitrix24]]></category><category><![CDATA[финансовое ядро]]></category><category><![CDATA[генерация договоров]]></category><category><![CDATA[сопоставление платежей]]></category><category><![CDATA[контроль оплат]]></category><category><![CDATA[учёт рабочего времени]]></category><category><![CDATA[строительная аналитика]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[boilerplate_ratio = 1.73: что считает аудитор готовности страниц к ответам ИИ]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090466/</guid>
+      <link>https://habr.com/ru/articles/1090466/?utm_campaign=1090466&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<p>Прогон аудитора пригодности страниц к ответам ИИ вернул нули по всем адресам батча. Полез в исходники пакета и нашёл шесть мест, где он считает не то, что обещает: доля шаблонного текста, которая бывает больше единицы из-за двойного счёта вложенных узлов, регулярки на латинице, из-за которых русский текст получает ноль, веса, в которые не входит половина печатаемых метрик, и бюджет в десять секунд, отведённый на пятнадцать запросов. Разбор с кодом и минимальными примерами.</p> <a href="https://habr.com/ru/articles/1090466/?utm_campaign=1090466&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 10:46:43 GMT</pubDate>
+      <dc:creator><![CDATA[aremishevskiy]]></dc:creator>
+      
+      <category><![CDATA[GEO]]></category><category><![CDATA[ИИ-поиск]]></category><category><![CDATA[цитируемость]]></category><category><![CDATA[регулярные выражения]]></category><category><![CDATA[open source]]></category><category><![CDATA[аудит сайта]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Можно ли научить маленькую LLM учиться без роста весов? Замеры, баги и честная статистика]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090464/</guid>
+      <link>https://habr.com/ru/articles/1090464/?utm_campaign=1090464&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<p>Мейнстрим растит модели масштабом. Мы меряем ортогональное: можно&nbsp;ли растить компетентность маленькой модели без&nbsp;роста весов&nbsp;— через верифицированную память и локальное обучение, с&nbsp;жёстким потолком ресурсов (бытовая GPU 12&nbsp;GB).</p> <a href="https://habr.com/ru/articles/1090464/?utm_campaign=1090464&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 10:45:37 GMT</pubDate>
+      <dc:creator><![CDATA[Ejukk]]></dc:creator>
+      
+      <category><![CDATA[LLM]]></category><category><![CDATA[continual learning]]></category><category><![CDATA[LoRA]]></category><category><![CDATA[дистилляция]]></category><category><![CDATA[машинное обучение]]></category><category><![CDATA[эксперименты]]></category><category><![CDATA[верификация]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Парсинг на Python: HTTP, Scrapy или браузер — практическое сравнение]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090444/</guid>
+      <link>https://habr.com/ru/articles/1090444/?utm_campaign=1090444&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/992/fd2/1d4/992fd21d433de4d620cdbd25f4f0a685.png" /><p>BeautifulSoup, Scrapy, Selenium и Playwright часто сравнивают как аналоги, хотя это инструменты разных уровней. Я собрала тестовый стенд и сравнила их на статическом HTML, JavaScript-странице, массовом обходе и работе с UI — с замерами времени, памяти и неожиданными результатами.</p> <a href="https://habr.com/ru/articles/1090444/?utm_campaign=1090444&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 10:23:49 GMT</pubDate>
+      <dc:creator><![CDATA[AruzhanS]]></dc:creator>
+      
+      <category><![CDATA[парсинг]]></category><category><![CDATA[датасет]]></category><category><![CDATA[аналитика]]></category><category><![CDATA[тестирование]]></category><category><![CDATA[THE ANTS]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Три ловушки в VOSK: моя программа удаляла корректные модели после скачивания]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090360/</guid>
+      <link>https://habr.com/ru/articles/1090360/?utm_campaign=1090360&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/3ff/f78/8bd/3fff788bde61aade4f7d4e4005ab3bb3.jpg" /><p>Мне нужно&nbsp;было приложение, которое распознаёт речь и никуда не&nbsp;отправляет аудио. Не «не отправляет по&nbsp;умолчанию» и не «у нас есть офлайн‑режим»&nbsp;— а&nbsp;физически не&nbsp;может, потому что&nbsp;сети нет в&nbsp;процессе.</p><p>Когда я начал искать, выяснилось, что&nbsp;выбор небольшой.</p> <a href="https://habr.com/ru/articles/1090360/?utm_campaign=1090360&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 08:36:14 GMT</pubDate>
+      <dc:creator><![CDATA[alex375]]></dc:creator>
+      
+      <category><![CDATA[vosk]]></category><category><![CDATA[распознование речи]]></category><category><![CDATA[kaldi]]></category><category><![CDATA[offline]]></category><category><![CDATA[windows]]></category><category><![CDATA[приватность]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Исходящие вебхуки Битрикс24: как принять POST на своём сервере и что делать дальше]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/bitrix/articles/1089126/</guid>
+      <link>https://habr.com/ru/companies/bitrix/articles/1089126/?utm_campaign=1089126&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/6e4/259/708/6e4259708fe9e1603054c055c95c3653.jpg" /><p>Что происходит после того, как Битрикс24 отправляет исходящий вебхук? Разбираем POST-запрос, логирование, Flask, Django и базовую защиту endpoint.</p> <a href="https://habr.com/ru/articles/1089126/?utm_campaign=1089126&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 08:00:12 GMT</pubDate>
+      <dc:creator><![CDATA[automatization24 (Битрикс24)]]></dc:creator>
+      
+      <category><![CDATA[битрикс24]]></category><category><![CDATA[rest]]></category><category><![CDATA[вебхуки]]></category><category><![CDATA[исходящие вебхуки]]></category><category><![CDATA[интеграция]]></category><category><![CDATA[crm]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Защитит ли ИИ от дрона? Разрабатываем умный прицел]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1087940/</guid>
+      <link>https://habr.com/ru/articles/1087940/?utm_campaign=1087940&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/9c1/a97/94d/9c1a9794deb8000d3e69beecff6f721a.jpg" /><p>Ни для кого ни секрет, что в последние несколько лет в военном деле произошла т.н. революция дронов, заключающаяся (внезапно) в использовании дронов для поражения военной техники и живой силы противника. И в отличии от предыдущих революций, опиравшихся в основном на высокие технологии и не менее высокую цену изготавливаемой продукции, FPV-дроны делают ход козлом и берут не столько технологичностью, сколько копеечной стоимостью, благодаря которой такой агрегат не только может выносить технику, превосходящую его по стоимости в тысячи раз, даже снаряд ПВО порой стоит значительно дороже. </p><p>И если военная техника кое-как пытается противостоять новой угрозе, обрастая антидроновыми "зонтиками" и "усами", обвешиваясь активной защитой и антидроновыми турелями, то вот с переносными средствами защиты, способными спасти пехотинца, все не так радужно.</p> <a href="https://habr.com/ru/articles/1087940/?utm_campaign=1087940&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 07:36:10 GMT</pubDate>
+      <dc:creator><![CDATA[beatwad]]></dc:creator>
+      
+      <category><![CDATA[машинное+обучение]]></category><category><![CDATA[python]]></category><category><![CDATA[fpga]]></category><category><![CDATA[pytorch]]></category><category><![CDATA[ml]]></category><category><![CDATA[cv]]></category><category><![CDATA[embedded]]></category><category><![CDATA[mpu]]></category><category><![CDATA[neural networks]]></category><category><![CDATA[object detection]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Задача закрыта, когда ветка влита: как наша платформа разрабатывает сама себя]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090282/</guid>
+      <link>https://habr.com/ru/articles/1090282/?utm_campaign=1090282&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/98f/86b/c12/98f86bc12ca2aeeddfa9cb69d378c377.png" /><p>30 сентября в 06:32 в очереди появилась задача: научить ядро платформы переводить открытые задачи на новую версию их типа. Повод был будничный — мы выпустили новую версию типа «задача на код» с более строгими проверками перед сдачей, а вся открытая очередь осталась на старой и получала старые инструкции.</p><p>Через 19 минут агент сдал работу: новый маршрут API, тесты, документация. В 07:15 ревью её отклонило. Новый маршрут позволял агенту с обычными правами исполнителя перевести <em>свою</em> задачу на первую версию типа — ту, где ревью ещё не было, — взять её и закрыть самому. Ревьюер воспроизвёл это по шагам и написал, какое право должно закрывать маршрут. В 08:03 агент взял задачу снова, через 15 минут сдал исправление, в 08:24 ревью прошло и ветка влилась. От постановки до вливания — 1 час 52 минуты, два прогона агента.</p><p>Агент написал дыру, через которую агент мог бы уйти от ревью, и поймало её ревью, которое платформа считает частью самой задачи. 4 октября мы выпустили первый открытый релиз платформы — <a href="https://github.com/taimen-ai/taimen/releases/tag/v0.2.0" rel="noopener nofollow">Taimen v0.2.0</a>, Apache-2.0. Ниже — как она устроена и что мы поняли, пока почти два месяца разрабатывали её её же собственными средствами. В конце — как этот релиз выпустила сама очередь.</p> <a href="https://habr.com/ru/articles/1090282/?utm_campaign=1090282&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Mon, 05 Oct 2026 04:52:58 GMT</pubDate>
+      <dc:creator><![CDATA[monthu56]]></dc:creator>
+      
+      <category><![CDATA[ИИ-агенты]]></category><category><![CDATA[Claude Code]]></category><category><![CDATA[приёмка задач]]></category><category><![CDATA[код-ревью]]></category><category><![CDATA[раф знаний]]></category><category><![CDATA[открытый исходный код]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Первая часть шестнадцатой проблемы Гильберта: перебираем схемы степени 8 с ограничениями]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090172/</guid>
+      <link>https://habr.com/ru/articles/1090172/?utm_campaign=1090172&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/43a/1cd/db9/43a1cddb9e760ecf567b5d76c258162b.png" /><p>  Код и списки выложены в публичном репозитории на GitVerse по ссылке:&nbsp;<a href="https://gitverse.ru/mshshukin2005/real-schemes-degree8" rel="noopener nofollow">https://gitverse.ru/mshshukin2005/real-schemes-degree8</a>  </p><p>В этой статье я хочу рассказать об одной из многих нерешённых математических проблем.</p><p>Речь пойдёт о Шестнадцатой проблеме Гильберта.</p><p><strong>Шестнадцатая проблема Ги́льберта</strong>&nbsp;— одна из&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D1%8B_%D0%93%D0%B8%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82%D0%B0" rel="noopener nofollow">23 задач</a>, которые&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82,_%D0%94%D0%B0%D0%B2%D0%B8%D0%B4" rel="noopener nofollow">Давид Гильберт</a>&nbsp;предложил 8 августа 1900&nbsp;года на&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BD%D0%B3%D1%80%D0%B5%D1%81%D1%81_%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%BE%D0%B2" rel="noopener nofollow">II Международном конгрессе математиков</a>.</p><p>Исходно называлась «Проблема топологии алгебраических кривых и поверхностей». Впоследствии фактически разделилась на две похожие проблемы в разных областях математики:</p><p>исследование взаимного расположения&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B2%D0%B0%D0%BB" rel="noopener nofollow">овалов</a>&nbsp;вещественных&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D1%80%D0%B8%D0%B2%D0%B0%D1%8F" rel="noopener nofollow">алгебраических кривых</a>&nbsp;степени&nbsp;n (и аналогичный вопрос для&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%B5%D0%B1%D1%80%D0%B0%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D1%85%D0%BD%D0%BE%D1%81%D1%82%D1%8C" rel="noopener nofollow">алгебраических поверхностей</a>);</p><p>получение верхней оценки на число&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D1%86%D0%B8%D0%BA%D0%BB" rel="noopener nofollow">предельных циклов</a>&nbsp;полиномиального&nbsp;<a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5" rel="noopener nofollow">векторного поля</a>&nbsp;степени n&nbsp;(и исследование их взаимного расположения).</p><p>Источник:<a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D1%81%D1%82%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B0%D1%8F_%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0_%D0%93%D0%B8%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82%D0%B0" rel="noopener nofollow">https://ru.wikipedia.org/wiki/Шестнадцатая_проблема_Гильберта</a></p> <a href="https://habr.com/ru/articles/1090172/?utm_campaign=1090172&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sun, 04 Oct 2026 17:12:21 GMT</pubDate>
+      <dc:creator><![CDATA[Maximka200]]></dc:creator>
+      
+      <category><![CDATA[алгебраическая геометрия]]></category><category><![CDATA[проблемы гильберта]]></category><category><![CDATA[кривая]]></category><category><![CDATA[полиномы]]></category><category><![CDATA[схемы]]></category><category><![CDATA[комбинаторика]]></category><category><![CDATA[склейка]]></category><category><![CDATA[нотация]]></category><category><![CDATA[список]]></category><category><![CDATA[математика]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Локальный ассистент для зумов, часть 9: Nemotron от NVIDIA — почему взял и что получил]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090186/</guid>
+      <link>https://habr.com/ru/articles/1090186/?utm_campaign=1090186&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<p>Чароит записывает мои созвоны, а после кнопки Стоп собирает стенограмму, протокол и граф встречи. Самое капризное место во всей цепочке — понять, кто что сказал. Это называется диаризацией. Ошиблась она, и решение в протоколе повисает на другом человеке.</p><p>23 сентября NVIDIA выложила нейросеть, которая только этим и занимается. Через пять дней она уже работала у меня. Сейчас через неё идут оба канала звонка, очные встречи и живая лента.</p> <a href="https://habr.com/ru/articles/1090186/?utm_campaign=1090186&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sun, 04 Oct 2026 14:33:56 GMT</pubDate>
+      <dc:creator><![CDATA[Charoiteai]]></dc:creator>
+      
+      <category><![CDATA[диаризация]]></category><category><![CDATA[nemotron]]></category><category><![CDATA[sherpa-onnx]]></category><category><![CDATA[mlx]]></category><category><![CDATA[apple silicon]]></category><category><![CDATA[локальные модели]]></category><category><![CDATA[стенограмма встреч]]></category><category><![CDATA[pytest]]></category><category><![CDATA[живая транскрипция]]></category><category><![CDATA[open source]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Собираю робота на Raspberry Pi 5 для дочери. Но говорящей колонкой тут не отделаться! Вызов принят, погнали. (Часть 1)]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1090078/</guid>
+      <link>https://habr.com/ru/articles/1090078/?utm_campaign=1090078&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/7cc/1d9/8dc/7cc1d98dc26df5d697a5f381da6214ed.png" /><p>Я хотел, чтобы робот помогал ребенку и мог разговаривать <strong>без интернета</strong>. Пришлось перебрать почти двадцать локальных моделей, подобрать голос, поставить камеру в бант и научить глаза и голову следить за человеком. В <strong>первой части</strong> рассказываю, как из эскиза получился работающий стенд — и что пошло не по плану.</p> <a href="https://habr.com/ru/articles/1090078/?utm_campaign=1090078&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sun, 04 Oct 2026 07:22:26 GMT</pubDate>
+      <dc:creator><![CDATA[NitroID]]></dc:creator>
+      
+      <category><![CDATA[Raspberry Pi 5]]></category><category><![CDATA[домашний робот]]></category><category><![CDATA[робототехника]]></category><category><![CDATA[локальный ИИ]]></category><category><![CDATA[3D-печать]]></category><category><![CDATA[распознавание речи]]></category><category><![CDATA[синтез речи]]></category><category><![CDATA[слежение за лицом]]></category><category><![CDATA[сервопривод]]></category><category><![CDATA[python3]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Прогнозирование вспышек инфекций]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089990/</guid>
+      <link>https://habr.com/ru/articles/1089990/?utm_campaign=1089990&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<p>Я собрал MVP системы поддержки принятия решений для эпидемиологического мониторинга. Цель была технической: проверить полный путь от временного ряда по территории до расчёта риска и выдачи результата в диалоговом интерфейсе.</p><p>Важное ограничение: эпидемиологическая динамика в этом MVP синтетическая. Реальными были названия муниципалитетов, площадь, численность населения, плотность и температура из Яндекс Погоды. Показатели вакцинации, число случаев, заболеваемость и целевая метка генерировались программно.</p><p>Поэтому приведённые метрики не говорят ничего о способности модели прогнозировать реальные вспышки ОРВИ. На таких данных нельзя делать вывод, что одна архитектура лучше другой: модель в первую очередь учится закономерностям, заложенным в генератор синтетического ряда.</p><p>Тем не менее стенд оказался полезен. Он позволил проверить построение временных окон, хронологическое разбиение, нормализацию, обучение, инференс, пороги уведомлений и обработку редкого положительного класса.</p> <a href="https://habr.com/ru/articles/1089990/?utm_campaign=1089990&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 03 Oct 2026 12:25:07 GMT</pubDate>
+      <dc:creator><![CDATA[X_ray_ml]]></dc:creator>
+      
+      <category><![CDATA[искусственный интеллект]]></category><category><![CDATA[здоровье]]></category><category><![CDATA[здоровье и компьютер]]></category><category><![CDATA[инфекции]]></category><category><![CDATA[инфекционные заболевания]]></category><category><![CDATA[инфекция]]></category><category><![CDATA[прогнозирование]]></category><category><![CDATA[прогнозы]]></category><category><![CDATA[прогнозная аналитика]]></category><category><![CDATA[здравоохранение]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Свинство в действии: расширяем синтаксис питона]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089328/</guid>
+      <link>https://habr.com/ru/articles/1089328/?utm_campaign=1089328&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/0fd/ff6/244/0fdff62443729d86c3a45789a0549a4d.png" /><p>Около 3-х лет назад, я написал <a href="https://habr.com/ru/articles/721776/" rel="noopener nofollow">статью</a> о том, как я открыл для себя язык программирования gleam. Тогда я отметил, что gleam не так уж сильно отличается от питона.</p><p>Сейчас я решил продолжить дискурс и перенести его в практическую плоскость. Я сделал форк CPython и попросил DeepSeek немного поиграться с синтаксисом. Хорошо, что в питоне обновили парсер - он теперь достаточно гибкий.</p><p>В общем, если смотреть с формальной стороны - получился новый язык. Он немного расширяет питон (то есть, является суперсетом), но совсем чуть-чуть. Оставаясь при этом верным главному синтаксическому принципу - значимым пробелам. Целевые рантаймы для этого языка - CPython и BEAM. Они очень разные, поэтому отлично дополняют друг друга.</p><p>На картинке вы видите знак вопроса. Он связан с тем, что у нового языка пока нет окончательного названия. Есть только некоторые идеи - они связаны, простите, со свиньями. Также, в конце будет опрос - нужны ли минипиги в программировании. Ответьте, пожалуйста, это очень важно.</p> <a href="https://habr.com/ru/articles/1089328/?utm_campaign=1089328&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 03 Oct 2026 12:16:18 GMT</pubDate>
+      <dc:creator><![CDATA[abetkin]]></dc:creator>
+      
+      <category><![CDATA[python]]></category><category><![CDATA[gleam]]></category><category><![CDATA[erlang]]></category><category><![CDATA[functional]]></category><category><![CDATA[language]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Программа поиска по PDF. Разбираем PageIndex, Streamlit и ссылки на страницы]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089882/</guid>
+      <link>https://habr.com/ru/articles/1089882/?utm_campaign=1089882&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/329/f9e/175/329f9e175479f1060e025781040e883d.jpg" /><p>«Срок гарантии — 18 месяцев». Красивый ответ. А если в договоре написано 12? Или число 18 стоит в разделе о хранении, а модель просто зацепилась за него?</p><p>В чате такие ошибки прячутся за гладкой фразой. Я хотел иной маршрут: задать вопрос к PDF, получить ответ и одним нажатием открыть <strong>физическую страницу исходного файла</strong>, на которую ссылается модель. Так появился <a href="https://github.com/balyakin/pdf-desk" rel="noopener nofollow">PDF Desk</a> — небольшое приложение на Python, Streamlit, PageIndex и PDFium. Один активный документ. Никакой базы пользователей. Индекс и исходный PDF остаются на компьютере; при использовании внешней модели текст документа всё равно уходит её провайдеру.</p><p>Дальше — где проходит граница между SDK и приложением. Почему голый <code>/models</code> не годится для проверки подключения. Из чего собран идентификатор индекса. И почему ссылка на существующую страницу ещё не значит, что ответ доказан. В конце живой прогон DeepSeek, включая браузер, и сценарии, для которых этого прогона мало.</p> <a href="https://habr.com/ru/articles/1089882/?utm_campaign=1089882&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 03 Oct 2026 08:06:53 GMT</pubDate>
+      <dc:creator><![CDATA[Kaluga1]]></dc:creator>
+      
+      <category><![CDATA[rag]]></category><category><![CDATA[python]]></category><category><![CDATA[pdf]]></category><category><![CDATA[streamlit]]></category><category><![CDATA[llm]]></category><category><![CDATA[поиск по документам]]></category><category><![CDATA[проверка источников]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как я собрал бота коммерческих предложений на чистом stdlib и рендерю PDF через headless Chrome]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089814/</guid>
+      <link>https://habr.com/ru/articles/1089814/?utm_campaign=1089814&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/aed/e5f/663/aede5f663f35cc1ae794eed142513872.png" /><p>Я дизайнер интерфейсов и работаю как фрилансер. На каждое коммерческое предложение у меня уходило часа три: смета в таблице, вёрстка, экспорт, проверка. Шаги одни и те же, меняются цифры и состав работ. В конце июля я упаковал этот процесс в Telegram-бота, который задаёт семь вопросов и присылает PDF со сметой, сроками, этапами и кейсами.</p><p>Расскажу, как смета собирается из свободного текста, почему PDF рендерит Chrome, как бот приводит обложки кейсов к одной пропорции и зачем ему мини-приложение. В конце грабли эксплуатации и цифры за два месяца.</p> <a href="https://habr.com/ru/articles/1089814/?utm_campaign=1089814&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 02 Oct 2026 19:04:33 GMT</pubDate>
+      <dc:creator><![CDATA[nikitashubin]]></dc:creator>
+      
+      <category><![CDATA[telegram-бот]]></category><category><![CDATA[python]]></category><category><![CDATA[stdlib]]></category><category><![CDATA[headless chrome]]></category><category><![CDATA[pdf]]></category><category><![CDATA[коммерческое предложение]]></category><category><![CDATA[смета]]></category><category><![CDATA[long polling]]></category><category><![CDATA[pillow]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как я создал СуперЗавуч — программу для генерации расписаний занятий]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089006/</guid>
+      <link>https://habr.com/ru/articles/1089006/?utm_campaign=1089006&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/1e6/039/439/1e6039439af0fa490356da20c53f678f.png" /><p>Привет, Хабр! Я бы хотел рассказать о том, как я создал программу для составления расписаний для учебных заведений - <strong>СуперЗавуч</strong>.</p><p>СуперЗавуч - современная программа для составления расписаний уроков для школ, лицеев и колледжей. Программа позволяет создать расписание за несколько минут и имеет много параметров для конфигураций.</p> <a href="https://habr.com/ru/articles/1089006/?utm_campaign=1089006&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 02 Oct 2026 16:00:45 GMT</pubDate>
+      <dc:creator><![CDATA[artyom7777]]></dc:creator>
+      
+      <category><![CDATA[алгоритмы]]></category><category><![CDATA[учебный процесс]]></category><category><![CDATA[учебный процесс в it]]></category><category><![CDATA[python]]></category><category><![CDATA[open source]]></category><category><![CDATA[расписание]]></category><category><![CDATA[school]]></category><category><![CDATA[school management]]></category><category><![CDATA[c++]]></category><category><![CDATA[школа]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Typing в Python 3.11–3.14: что изменилось и как это использовать уже сейчас]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089780/</guid>
+      <link>https://habr.com/ru/articles/1089780/?utm_campaign=1089780&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/612/715/9bb/6127159bb87b6259b4cca4fdfe46d170.png" /><p>За последнее время я прочитал множество репозиториев, где в Pyhton пользуются типизацией и почти везде синтаксис не новее 3.11: <code>Optional</code>, <code>TypeVar</code> на уровне модуля, <code>Generic[T]</code>, кавычки вокруг опережающих ссылок. При этом у Python 3.10 поддержка закончилась, и разработчики языка дали нам новых удобных инструментов и чтобы ими пользоваться не всегда нужно обновляться до последней версии. В этой статье расскажу, какие основные фишки появились за последние несколько лет и как ими пользоваться даже в проектах на старых версиях.</p> <a href="https://habr.com/ru/articles/1089780/?utm_campaign=1089780&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 02 Oct 2026 15:54:50 GMT</pubDate>
+      <dc:creator><![CDATA[KrimsN]]></dc:creator>
+      
+      <category><![CDATA[python]]></category><category><![CDATA[typing]]></category><category><![CDATA[type hints]]></category><category><![CDATA[статическая типизация]]></category><category><![CDATA[mypy]]></category><category><![CDATA[pyright]]></category><category><![CDATA[ty]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Семь занятий по локальному RAG на Python от файла до ответа с источниками]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089682/</guid>
+      <link>https://habr.com/ru/articles/1089682/?utm_campaign=1089682&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/bab/aaa/d5a/babaaad5a66cab707e7088e0506fe3f6.png" /><p>Сделал бесплатный курс для&nbsp;тех кто хочет научиться создавать локальные ИИ приложения на&nbsp;Python. За&nbsp;семь занятий разберём помощника, который ищет по&nbsp;вашим документам, отвечает на&nbsp;вопросы и показывает исходные фрагменты для&nbsp;проверки.<br><br>Чат с&nbsp;документами выглядит просто. Положили файлы в&nbsp;папку, задали вопрос, получили несколько складных предложений. Но&nbsp;стоит ответу разойтись с&nbsp;текстом&nbsp;— и хочется увидеть всю кухню: что&nbsp;нашёл поиск, что&nbsp;отправили модели и откуда она взяла последнюю фразу.</p><p>В <strong>local‑docs‑ai</strong> вокруг этой цепочки собран короткий курс. Семь занятий, одна программа. Она читает Markdown и TXT, ищет подходящие фрагменты через локальную embedding‑модель, передаёт их языковой модели и показывает исходный текст с&nbsp;именами файлов и номерами строк. Есть терминальные команды и окно в&nbsp;браузере.</p><p>Маршрут рассчитан на&nbsp;человека, которому знакомы функции, списки и словари Python. Сначала запускаем готовый пример. Затем разбираем его по&nbsp;частям, меняем документы и учимся различать два сбоя: поиск промахнулся или&nbsp;модель неверно пересказала найденное. В&nbsp;этой статье пройдём весь механизм; <a href="https://github.com/balyakin/local-docs-ai" rel="noopener nofollow">код и отдельные занятия</a> лежат в&nbsp;одном репозитории.</p> <a href="https://habr.com/ru/articles/1089682/?utm_campaign=1089682&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 02 Oct 2026 13:38:40 GMT</pubDate>
+      <dc:creator><![CDATA[Kaluga1]]></dc:creator>
+      
+      <category><![CDATA[python]]></category><category><![CDATA[rag]]></category><category><![CDATA[ollama]]></category><category><![CDATA[llm]]></category><category><![CDATA[streamlit]]></category><category><![CDATA[локальные модели]]></category><category><![CDATA[семантический поиск]]></category><category><![CDATA[эмбеддинги]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Кедр: SACD ISO в FLAC, написанный в Cursor]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089636/</guid>
+      <link>https://habr.com/ru/articles/1089636/?utm_campaign=1089636&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/3b1/4b3/c0f/3b14b3c0f7cc7a667cfb150d9141e37b.png" /><p>Мне нужна была утилита под macOS, которая берёт образ Super Audio CD и делает из него FLAC. Обычный путь «открыть ISO в ffmpeg» здесь не работает: внутри не PCM, а однобитный DSD, часто ещё сжатый в DST. В итоге получился <a href="https://github.com/PavelDzhagriev/sacd-convert" rel="noopener nofollow">Кедр</a>. Окно на Electron, само преобразование делает локальный Python, альбом с машины никуда не уходит.</p><p>И сразу честно, как это писалось. Я не набирал проект руками файл за файлом. Это вайбкодинг в Cursor: я говорил, что должно получиться, смотрел результат и возвращал в чат то, что сломалось уже на настоящем диске. Модель хорошо собирает каркас и плохо угадывает, как себя ведёт Homebrew ffmpeg 9 на конкретном DSF. Ниже как раз про это. Без тех прогонов на своём Mac утилита бы так и осталась «ну вроде открывается».</p> <a href="https://habr.com/ru/articles/1089636/?utm_campaign=1089636&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 02 Oct 2026 11:53:52 GMT</pubDate>
+      <dc:creator><![CDATA[mordorhell]]></dc:creator>
+      
+      <category><![CDATA[sacd]]></category><category><![CDATA[dsd]]></category><category><![CDATA[Flac]]></category><category><![CDATA[dsf]]></category><category><![CDATA[mp3]]></category><category><![CDATA[cursor]]></category><category><![CDATA[вайбкодинг]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[DBML Diagram для IntelliJ IDEA с офлайн превью и открытым исходным кодом]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089544/</guid>
+      <link>https://habr.com/ru/articles/1089544/?utm_campaign=1089544&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/c24/583/82f/c2458382f0021cf61cbf2262d0bbc555.png" /><p>Привет! На связи <a href="https://t.me/boost_for_java" rel="noopener nofollow">Boost for Java</a>. Развиваем <strong>DBML Diagram</strong> — open source плагин для IntelliJ IDEA и других совместимых IDE на платформе IntelliJ. Он строит ER-диаграмму рядом с открытым <code>.dbml</code>-файлом: меняете описание таблиц и связей — превью обновляется прямо в редакторе. Построение диаграммы работает локально, без отправки схемы во внешний сервис.</p><p>В этой статье покажем возможности версии 0.1.0, пользу работы со схемами прямо в IntelliJ IDEA и устройство плагина. Отдельно расскажем о планах интеграции с <a href="http://dbdiagram.io" rel="noopener nofollow">dbdiagram.io</a> для публикации локальных изменений в общую схему. </p><p>Проект открыт: будем рады предложениям, примерам проблемных схем и участию в разработке.</p><p><a href="https://plugins.jetbrains.com/plugin/34613-dbml-diagram" rel="noopener nofollow">Плагин в JetBrains Marketplace</a> · <a href="https://github.com/RomanVoronovskiy/DBML_Diagram" rel="noopener nofollow">Исходный код на GitHub</a></p> <a href="https://habr.com/ru/articles/1089544/?utm_campaign=1089544&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 02 Oct 2026 09:36:21 GMT</pubDate>
+      <dc:creator><![CDATA[v_d_roman]]></dc:creator>
+      
+      <category><![CDATA[dbml]]></category><category><![CDATA[java]]></category><category><![CDATA[python]]></category><category><![CDATA[jetbrains]]></category><category><![CDATA[ide]]></category><category><![CDATA[c#]]></category><category><![CDATA[go]]></category><category><![CDATA[diagram]]></category><category><![CDATA[dbml diagram]]></category><category><![CDATA[open source]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Сравнение регионов Казахстана]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089490/</guid>
+      <link>https://habr.com/ru/articles/1089490/?utm_campaign=1089490&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/2b1/96c/5fe/2b196c5fe3ed57cca41c07d95390926f.jpg" /><p>Я собрал больше 32 тысяч объявлений с Krisha и данные БНС по зарплатам, ценам, тарифам и переездам. Потом посчитал, сколько остаётся от зарплаты после аренды, еды и коммуналки, и сравнил это с тем, куда на самом деле переезжают люди.</p> <a href="https://habr.com/ru/articles/1089490/?utm_campaign=1089490&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Как живут в Казахстане...</a>]]></description>
+      
+      <pubDate>Fri, 02 Oct 2026 08:41:09 GMT</pubDate>
+      <dc:creator><![CDATA[NikitaBulava]]></dc:creator>
+      
+      <category><![CDATA[data analysis]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как нейросети выбирают источники для ответов и почему половину ссылок получают два ресурса в нише]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089394/</guid>
+      <link>https://habr.com/ru/articles/1089394/?utm_campaign=1089394&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/2ad/401/214/2ad401214da6fc4c9afc740fe901e05b.jpg" /><p>Я задал пяти нейросетям с включённым поиском 20 вопросов покупателя услуги продвижения и выписал домены из ссылок под ответами. Вышло 211 сайтов, и на 161 из них сослалась только одна нейросеть. Сайтов, на которые ссылаются три нейросети и больше, всего 17, и они стоят в 79% ответов со ссылками. Два из них, Sostav и vc.ru, — больше чем в половине. Через шесть недель девять сайтов из этих 17 снова оказались общими для трёх нейросетей и больше.</p> <a href="https://habr.com/ru/articles/1089394/?utm_campaign=1089394&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 02 Oct 2026 07:26:26 GMT</pubDate>
+      <dc:creator><![CDATA[ig_novvv]]></dc:creator>
+      
+      <category><![CDATA[нейросеть источники]]></category><category><![CDATA[источники информации нейросеть]]></category><category><![CDATA[как нейросети выбирают источники]]></category><category><![CDATA[нейросеть ссылки на источники]]></category><category><![CDATA[GEO]]></category><category><![CDATA[AEO]]></category><category><![CDATA[Perplexity]]></category><category><![CDATA[Алиса AI]]></category><category><![CDATA[ChatGPT]]></category><category><![CDATA[продвижение в нейросетях]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как работает шифровальная машина Lorenz SZ 42 (для телетайпа)]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1076034/</guid>
+      <link>https://habr.com/ru/articles/1076034/?utm_campaign=1076034&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/19f/ae3/79d/19fae379dd536a644a24ceb51ec136a3.jpg" /><p>В прошлом году я написал пост про известную шифровальную машину нацистов <a href="https://habr.com/ru/articles/939704/" rel="noopener nofollow">Как работает машина Enigma M3 (для флота) / Хабр</a> . </p><p>Enigma широко использовалась в немецких вооружённых силах, включая армию и флот.</p><p>Но куда менее известной является машина Lorenz SZ 42, хотя она была не менее важна.</p><p>Из этой статьи вы сможете узнать, как шифровали сверхсекретную связь высшего немецкого командования, как ошибка оператора в 1941 году помогла раскрыть устройство Lorenz и почему в 1944-м для чтения таких сообщений появился электронный Colossus.</p><p>Сразу скажу, что написать эту статью было куда сложнее, чем статью про Enigma, так как материалов про это сильно меньше, особенно научно-популярных и особенно на русском языке. Но это того стоило! Получилась еще одна увлекательная глава из истории техники, криптографии и Второй мировой войны.</p><p>Кроме того, в процессе работы над материалом было найдено довольно много первоисточников, которые неплохо сохранить внутри такой статьи. В самом низу есть cайты, архивы, интерактивные модели и первоисточники, в статье много кода на Python.</p> <a href="https://habr.com/ru/articles/1076034/?utm_campaign=1076034&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Погрузиться в историю ...</a>]]></description>
+      
+      <pubDate>Thu, 01 Oct 2026 16:06:11 GMT</pubDate>
+      <dc:creator><![CDATA[master_program]]></dc:creator>
+      
+      <category><![CDATA[Lorenz SZ42]]></category><category><![CDATA[Tunny]]></category><category><![CDATA[криптография]]></category><category><![CDATA[криптоанализ]]></category><category><![CDATA[Bletchley Park]]></category><category><![CDATA[Colossus]]></category><category><![CDATA[шифр Вернама]]></category><category><![CDATA[ITA2]]></category><category><![CDATA[Enigma]]></category><category><![CDATA[Python]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как документировать API: частые ошибки и лучшие практики для создания своего руководства]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/dalee_group/articles/1089078/</guid>
+      <link>https://habr.com/ru/companies/dalee_group/articles/1089078/?utm_campaign=1089078&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a55/c72/af4/a55c72af40f181532b62a7de3e7e51d4.png" /><p>Через дата-инженеров <a href="https://clck.ru/3WEY8B">Далее </a>проходят десятки описаний интеграций в совершенно разных форматах, даже в Excel. Формально такая API-документация есть, но пользоваться ей больно, а иногда и вовсе невозможно.</p><p>Разбираем, чем «болеют» документации, как сделать понятное руководство со Swagger и без него, посмотрим лучшие практики создания API-документации. </p><p>В конце — чек-лист для написания и проверки документации. </p> <a href="https://habr.com/ru/articles/1089078/?utm_campaign=1089078&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 01 Oct 2026 13:53:15 GMT</pubDate>
+      <dc:creator><![CDATA[Dalee_group (Далее)]]></dc:creator>
+      
+      <category><![CDATA[swagger]]></category><category><![CDATA[api]]></category><category><![CDATA[python]]></category><category><![CDATA[документация]]></category><category><![CDATA[документация api]]></category><category><![CDATA[документация it]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Сканер 152-ФЗ выписал нарушения Госуслугам, РЖД и Т‑Банку. Разбираем как так вышло]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089184/</guid>
+      <link>https://habr.com/ru/articles/1089184/?utm_campaign=1089184&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/752/d67/645/752d67645b8c73f9149a1e8f1a1990f2.png" /><p>Ошибка&nbsp;линтера стоит пяти минут. Ошибка сканера, который проверяет сайты на&nbsp;соответствие 152-ФЗ, выглядит иначе: «ваш сайт нарушает закон». Если сайт при&nbsp;этом в&nbsp;порядке, а&nbsp;отчёт уже ушёл клиенту, расплачивается чужая репутация.</p><p>Мы пишем такой сканер. Отчёт по&nbsp;нему получает не&nbsp;владелец сайта, а&nbsp;веб‑студия, которая ведёт сотню клиентских сайтов, и дальше отдаёт его клиенту под&nbsp;своим логотипом. То есть за&nbsp;нашу выдуманную находку краснеть будет она.</p><p>Так что&nbsp;перед запуском мы отложили новые проверки и месяц занимались противоположным: искали, где сканер врёт. Написали три инструмента, которые ищут ошибки в&nbsp;нашем&nbsp;же коде, и прогнали через них полсотни самых неудобных сайтов Рунета. Трижды. Нашлось восемь ловушек. Ни одну из&nbsp;них не&nbsp;увидел клиент&nbsp;— но&nbsp;увидел&nbsp;бы, если&nbsp;бы мы просто запустились.</p> <a href="https://habr.com/ru/articles/1089184/?utm_campaign=1089184&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Все восемь ловушек</a>]]></description>
+      
+      <pubDate>Thu, 01 Oct 2026 13:11:51 GMT</pubDate>
+      <dc:creator><![CDATA[sqalopendra]]></dc:creator>
+      
+      <category><![CDATA[152-ФЗ]]></category><category><![CDATA[персональные данные]]></category><category><![CDATA[Роскомнадзор]]></category><category><![CDATA[ложные срабатывания]]></category><category><![CDATA[Playwright]]></category><category><![CDATA[веб-сканер]]></category><category><![CDATA[качество данных]]></category><category><![CDATA[антибот-защита]]></category><category><![CDATA[тестирование]]></category><category><![CDATA[Python]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Книга: «Простой Python. Современный стиль программирования. 3-е изд.»]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/piter/articles/1089142/</guid>
+      <link>https://habr.com/ru/companies/piter/articles/1089142/?utm_campaign=1089142&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/fa5/d31/3bf/fa5d313bf4b709952b2071231d69c7a4.png" /><p>Привет, Хаброжители! Путешествие в мир программирования часто напоминает блуждание по лабиринту, из которого нет выхода. Неудивительно, что Python стал любимцем миллионов: он не просто понятен, его приятно изучать, читать и писать на нем.</p> <a href="https://habr.com/ru/articles/1089142/?utm_campaign=1089142&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 01 Oct 2026 12:54:21 GMT</pubDate>
+      <dc:creator><![CDATA[ph_piter (Издательский дом «Питер»)]]></dc:creator>
+      
+      <category><![CDATA[книги по программированию]]></category><category><![CDATA[python]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[2 100 писем и ноль ответов: разбор холодной рассылки в банки и фонды]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089124/</guid>
+      <link>https://habr.com/ru/articles/1089124/?utm_campaign=1089124&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/fff/b5e/05e/fffb5e05ef750bb460c08753ce0aca8d.png" /><p>За две недели мы отправили около 2 100 приглашений в отраслевой опрос: специалистам по рискам в банках и инвестиционных фондах. Базу собрали сами. Организации взяли из открытого реестра юрлиц GLEIF, сайты искали через Wikidata и автокомплит Clearbit, адреса собирали со страниц контактов. Из холодной рассылки не ответил никто.</p><p>Под катом разбор по шагам. Почему среди 1 301 адреса с сайтов финансовых компаний нет ни одного со словом risk. Как локальный DNS в режиме fake-ip превратил проверку доменов в формальность. Почему почтовые шлюзы банков отбили письма, отправленные из Gmail. И как рассылка однажды завершилась без единой ошибки и не отправила ни одного письма. С кодом на Python и цифрами.</p> <a href="https://habr.com/ru/articles/1089124/?utm_campaign=1089124&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать разбор</a>]]></description>
+      
+      <pubDate>Thu, 01 Oct 2026 12:29:15 GMT</pubDate>
+      <dc:creator><![CDATA[russiankendricklamar]]></dc:creator>
+      
+      <category><![CDATA[холодная рассылка]]></category><category><![CDATA[email]]></category><category><![CDATA[dmarc]]></category><category><![CDATA[dkim]]></category><category><![CDATA[spf]]></category><category><![CDATA[smtp]]></category><category><![CDATA[dns]]></category><category><![CDATA[wikidata]]></category><category><![CDATA[python]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ExtremeCleaner: чистит кэш и показывает, что ещё удалить, чтобы освободить место]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1089088/</guid>
+      <link>https://habr.com/ru/articles/1089088/?utm_campaign=1089088&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/69a/7e6/477/69a7e647779f8059fb575e3a9f17a3d5.jpg" /><p>ExtremeCleaner — незаменимый инструмент для контроля занятого места на диске. Он не только чистит кэш, но и показывает, что ещё съедает гигабайты: большие AI-модели (Ollama, LM Studio), старые сохранения игр и миры Minecraft, забытые загрузки и видео, образы виртуальных машин, почтовые базы, записи звонков, кэши Spotify и видеоредакторов, старые версии программ.</p><p>Три вкладки: безопасная очистка в корзину, ваши файлы для ручного разбора и системные места (гибернация, WinSxS, точки восстановления, кэш обновлений) с инструкциями, как их подсократить при желании. Каждый пункт объяснён: что это и опасно ли трогать.</p><p>Если у вас небольшой SSD, свободное место на котором постоянно стремится к нулю, — этот инструмент решит вашу проблему с очисткой диска: регулярно находит, что можно безопасно убрать, и показывает, куда утекает место. Только для Windows.</p> <a href="https://habr.com/ru/articles/1089088/?utm_campaign=1089088&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 01 Oct 2026 11:27:05 GMT</pubDate>
+      <dc:creator><![CDATA[AIgrator]]></dc:creator>
+      
+      <category><![CDATA[disk cleaner]]></category><category><![CDATA[windows]]></category><category><![CDATA[python]]></category><category><![CDATA[PySide6]]></category><category><![CDATA[open source]]></category><category><![CDATA[очистка диска]]></category><category><![CDATA[кэш]]></category><category><![CDATA[точка восстановления]]></category><category><![CDATA[free space]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Бэкфилл должен был пометить одну строку, а пометил 321. Разбор миграции, которую пропустил зелёный тест]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1088644/</guid>
+      <link>https://habr.com/ru/articles/1088644/?utm_campaign=1088644&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<p>У нас есть сервис, который собирает продавцам XML-фид для автозагрузки Авито. В воскресенье 27 сентября я выкатил миграцию данных. По моему расчёту она ставила новый признак ровно одному объявлению. После выкатки признак стоял у 321. Вреда не случилось, потому что я пересчитал помеченные строки раньше, чем фид успел пересобраться. Ниже код, запросы и мой главный промах: условие я считал в голове, а на проде не прогнал ни разу.</p> <a href="https://habr.com/ru/articles/1088644/?utm_campaign=1088644&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 30 Sep 2026 13:49:12 GMT</pubDate>
+      <dc:creator><![CDATA[r_o_m_k_o_l_a]]></dc:creator>
+      
+      <category><![CDATA[миграции]]></category><category><![CDATA[alembic]]></category><category><![CDATA[postgresql]]></category><category><![CDATA[jsonb]]></category><category><![CDATA[бэкфилл]]></category><category><![CDATA[тестирование]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как я уделал Microsoft, но это никому не нужно (кайфую сам)]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1088618/</guid>
+      <link>https://habr.com/ru/articles/1088618/?utm_campaign=1088618&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/439/085/6ea/4390856ea0f38acf28f81a67177ed8d0.png" /><p>Я не программист. Я модель и писатель. Мне просто надоело печатать, поэтому я попросил ChatGPT помочь сделать собственную голосовую диктовку для Windows. С какими сложностями столкнулся и что из этого вышло?</p> <a href="https://habr.com/ru/articles/1088618/?utm_campaign=1088618&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 30 Sep 2026 13:25:34 GMT</pubDate>
+      <dc:creator><![CDATA[Trop_12]]></dc:creator>
+      
+      <category><![CDATA[голосовой ввод]]></category><category><![CDATA[разработчик]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[chatgpt]]></category><category><![CDATA[разработка приложений]]></category><category><![CDATA[разработка]]></category><category><![CDATA[windows]]></category><category><![CDATA[python]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Откуда ИИ-модели берут топ компаний: в 62% ответов со ссылками есть чужая подборка]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1088600/</guid>
+      <link>https://habr.com/ru/articles/1088600/?utm_campaign=1088600&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f21/e0d/668/f21e0d668a9f210da6948ab758c0ab60.jpg" /><p>Я разобрал ответы ИИ-моделей на вопросы со словами лучшие, топ и рейтинг и смотрел, откуда взялся список. Из 208 ответов со ссылками на источники в 130, это 62%, стоит готовая подборка: чей-то топ-10, рейтинг или сравнение.</p><p>Ответы собраны по 32 проектам из разных ниш, от бухгалтерского аутсорсинга до фулфилмента, всего их 368, ссылки были у 208. Попасть в ответ — это во многом попасть в подборки, которые находит ИИ-модель. В конце — как проверить свою нишу за 3–5 вопросов и что делать с каждой найденной подборкой.</p> <a href="https://habr.com/ru/articles/1088600/?utm_campaign=1088600&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 30 Sep 2026 13:09:03 GMT</pubDate>
+      <dc:creator><![CDATA[sburyi]]></dc:creator>
+      
+      <category><![CDATA[топ компаний]]></category><category><![CDATA[рейтинг компаний]]></category><category><![CDATA[топ 10 компаний]]></category><category><![CDATA[продвижение в нейросетях]]></category><category><![CDATA[ИИ-поиск]]></category><category><![CDATA[Алиса AI]]></category><category><![CDATA[Perplexity]]></category><category><![CDATA[ChatGPT]]></category><category><![CDATA[GEO]]></category><category><![CDATA[нейросети]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Нейросеть написала PR, тесты зелёные, а поведение изменилось. Как я научил CI это ловить]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1088564/</guid>
+      <link>https://habr.com/ru/articles/1088564/?utm_campaign=1088564&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4ac/eef/514/4aceef514f7bc2457393c6f01b419a01.png" /><p>Модель «упрощает» валидацию.&nbsp;Линтер молчит, тесты проходят, ревьюер видит аккуратный дифф в&nbsp;одну строку и жмёт Approve. Через неделю выясняется, что&nbsp;функция скидки начала принимать отрицательный процент.</p><p>Тесты в&nbsp;таком PR почти всегда написала та&nbsp;же модель, что&nbsp;и код. Они подтверждают, что&nbsp;модель сделала задуманное, и ничего не&nbsp;говорят о&nbsp;том, ведёт&nbsp;ли себя код так&nbsp;же, как&nbsp;раньше. Я сделал инструмент, который проверяет именно это: он берёт каждую изменённую функцию, запускает старую и новую версию на&nbsp;одних и тех&nbsp;же входах и показывает вход, на&nbsp;котором они разошлись.</p><p>Под&nbsp;катом расскажу, как&nbsp;устроен&nbsp;confidence‑scorer, на&nbsp;какие грабли я наступил по&nbsp;дороге и почему в&nbsp;инструменте для&nbsp;проверки кода от&nbsp;нейросетей, нейросеть всё‑таки есть, хотя решающего голоса у&nbsp;неё нет.</p> <a href="https://habr.com/ru/articles/1088564/?utm_campaign=1088564&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 30 Sep 2026 12:31:16 GMT</pubDate>
+      <dc:creator><![CDATA[MedSurg]]></dc:creator>
+      
+      <category><![CDATA[python]]></category><category><![CDATA[property-based testing]]></category><category><![CDATA[hypothesis]]></category><category><![CDATA[differential testing]]></category><category><![CDATA[code review]]></category><category><![CDATA[github actions]]></category><category><![CDATA[llm]]></category><category><![CDATA[ollama]]></category><category><![CDATA[ai-генерированный код]]></category><category><![CDATA[ci-cd]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Источник данных, который закрыт и для меня, и для веб-архива]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1088562/</guid>
+      <link>https://habr.com/ru/articles/1088562/?utm_campaign=1088562&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/b49/9f6/b37/b499f6b379ea6bccd0f77e7720f17a2c.jpg" /><p>Задача звучала просто. Есть большой каталог франшиз - витрина, где сотни карточек с ценами входа. Надо понять, насколько быстро эта витрина обновляется: сколько предложений, которые человек видел два года назад, дожили до сегодня.</p><p>Вопрос не праздный. Каталог франшиз читают как справочник, и возраст предложения в нём воспринимается как возраст бизнеса за ним. Проверить это можно только одним способом - сравнить два состояния каталога в разные годы.</p><p>Ниже история про то, как я это сделал, и почему повторить уже не смогу: источник закрылся не только от меня, но и от веб-архива.</p> <a href="https://habr.com/ru/articles/1088562/?utm_campaign=1088562&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 30 Sep 2026 12:28:23 GMT</pubDate>
+      <dc:creator><![CDATA[frantlas]]></dc:creator>
+      
+      <category><![CDATA[веб-архив]]></category><category><![CDATA[wayback machine]]></category><category><![CDATA[save page now]]></category><category><![CDATA[открытые данные]]></category><category><![CDATA[срез данных]]></category><category><![CDATA[парсинг]]></category><category><![CDATA[python]]></category><category><![CDATA[421]]></category><category><![CDATA[403]]></category><category><![CDATA[воспроизводимость]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Показываем одно окно Windows на планшете через обычный браузер]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1088430/</guid>
+      <link>https://habr.com/ru/articles/1088430/?utm_campaign=1088430&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<p>Мне нужно было показывать на планшете окно одной программы с рабочего компьютера. Не весь экран, а именно одно окно, и только для просмотра: планшет нужен, чтобы смотреть картинку, а не чтобы кто-то случайно двинул мышкой что-то на ПК.</p><p>Готовых решений хватает: Spacedesk, Sunshine с Moonlight, VNC, демонстрация экрана в любом мессенджере для звонков. Часть из них превращает планшет во второй монитор, части нужен клиент на стороне устройства, часть показывает экран целиком, у некоторых свои условия лицензирования, которые стоит прочитать до того, как вы положитесь на инструмент. Мне хотелось чего-то проще: запустил на ПК, открыл адрес в браузере планшета, увидел окно. Получившуюся программу я выложил в открытый доступ. Она никого не заменяет, просто закрывает конкретную задачу, и если у вас такая же, возможно, вам пригодится.</p><p>Проект называется WindowStream: <a href="https://github.com/eugenyh/WindowStream" rel="noopener nofollow">https://github.com/eugenyh/WindowStream</a></p> <a href="https://habr.com/ru/articles/1088430/?utm_campaign=1088430&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 30 Sep 2026 08:49:44 GMT</pubDate>
+      <dc:creator><![CDATA[eugesha]]></dc:creator>
+      
+      <category><![CDATA[python]]></category><category><![CDATA[windows]]></category><category><![CDATA[mjpeg]]></category><category><![CDATA[трансляция экрана]]></category><category><![CDATA[захват окна]]></category><category><![CDATA[демонстрация экрана]]></category><category><![CDATA[open source]]></category><category><![CDATA[pystray]]></category><category><![CDATA[pyinstaller]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Англоязычные SEO-инструменты занижают русские тексты. Померили разрыв на 98 блоках]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1088406/</guid>
+      <link>https://habr.com/ru/articles/1088406/?utm_campaign=1088406&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/04c/d2d/225/04cd2d225b9e16b5e3aeec0ac92b25e2.jpg" /><p>Инструмент оценки цитируемости для ИИ-поиска поставил нашему сайту 31 из 100 и F почти всем блокам. Переписали рубрику под русский язык, не трогая веса и логику измерений: получили 42,5. Разрыв в 11,2 пункта собран из трёх регулярных выражений.</p> <a href="https://habr.com/ru/articles/1088406/?utm_campaign=1088406&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 30 Sep 2026 08:02:21 GMT</pubDate>
+      <dc:creator><![CDATA[aremishevskiy]]></dc:creator>
+      
+      <category><![CDATA[GEO]]></category><category><![CDATA[цитируемость]]></category><category><![CDATA[ИИ-поиск]]></category><category><![CDATA[регулярные выражения]]></category><category><![CDATA[SEO-инструменты]]></category><category><![CDATA[аудит контента]]></category><category><![CDATA[Python]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Кому принадлежит рыбка: задача Эйнштейна с точки зрения оптимизации]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1088082/</guid>
+      <link>https://habr.com/ru/articles/1088082/?utm_campaign=1088082&amp;utm_source=habrahabr&amp;utm_medium=rss</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/ee5/59a/692/ee559a692e933739558fef32c74d2d32.webp" /><p>«Только 1% людей способны решить эту задачу». С такой подписью в школьные годы мне попалась задача Эйнштейна. На подобную наживку я тогда клевал без раздумий и решал честно, как велели правила: в уме, без бумаги, 40 минут на всё. Сегодня решу её так, как меня научили годы работы с оптимизацией.</p> <a href="https://habr.com/ru/articles/1088082/?utm_campaign=1088082&amp;utm_source=habrahabr&amp;utm_medium=rss#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 30 Sep 2026 07:33:03 GMT</pubDate>
+      <dc:creator><![CDATA[Lozkins]]></dc:creator>
+      
+      <category><![CDATA[задача эйнштейна]]></category><category><![CDATA[constraint programming]]></category><category><![CDATA[cp-sat]]></category><category><![CDATA[математическое моделирование]]></category><category><![CDATA[математическая оптимизация]]></category><category><![CDATA[планирование расписаний]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+      
+
+      
+
+      
+
+    
+  </channel>
+</rss>

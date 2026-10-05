@@ -1,99 +1,95 @@
-# RobotRSS - A Telegram RSS Bot
+# RobotRSS 2 — RSS-бот для Telegram
 
-![RobotRss Logo](logo/text/robotrss_logo_text_512.png)
+![RobotRSS](logo/text/robotrss_logo_text_512.png)
 
-![Github python](https://img.shields.io/badge/latest_release-1.0.2-lightgrey.svg)
-![Github python](https://img.shields.io/badge/python-2.7-blue.svg)
-[![GitHubissues](https://img.shields.io/github/issues/cbrgm/telegram-robot-rss.svg)](https://github.com/cbrgm/telegram-robot-rss/issues)
-[![GitHub license](https://img.shields.io/badge/telegram-%40RobotRssBot-blue.svg)](https://telegram.me/RobotRssBot)
+Бот присылает в Telegram новые записи из RSS и Atom лент: новости, блоги,
+релизы на GitHub, вакансии, объявления. Можно подписаться на несколько лент,
+настроить фильтр по словам и запросить последние записи вручную.
 
-## Description
+> Это возрождение заброшенного проекта
+> [cbrgm/telegram-robot-rss](https://github.com/cbrgm/telegram-robot-rss)
+> (191★, в архиве с 2021 года). Оригинал был написан на Python 2.7 и
+> python-telegram-bot 8.1 образца 2017 года и на современном Python не
+> запускается. Код переписан, команды и идея сохранены, лицензия — та же MPL-2.0.
 
-RobotRSS is an RSS Bot for the Telegram Messenger. Subscribe to different news channels and stay up-to-date. Receive instant messages in your Messenger app when websites are updated, e. g. on news pages, blogs or audio/video logs.
+Python 3.11+ · aiogram 3 · httpx · feedparser · SQLite · pytest · Docker
 
-The latest stable release and release notes can be found [here][ba8097ee].
+| Подписка и последние записи | Фильтр и новые записи |
+|---|---|
+| ![Подписка](docs/screenshots/01-podpiska.png) | ![Фильтр](docs/screenshots/02-filtr-i-novoe.png) |
 
-  [ba8097ee]: https://github.com/cbrgm/telegram-robot-rss/releases/latest "releases"
+Скриншоты — из прогона на настоящих лентах Хабра и GitHub.
 
-### Deploy to Heroku:
-<p align="left"><a href="https://heroku.com/deploy"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+## Команды
 
-### Usage
-
-RobotRSS has an easy-to-use user interface to get started. Write the **official [@RobotRssBot][2f7e3ad7]** via telegram. Use the following commands to manage your subscriptions:
-
-[2f7e3ad7]: https://telegram.me/RobotRssBot "RobotRSS"
-
-**Controls**  
-`/start` - Activates the bot. If you have subscribed to RSS feeds, you will receive news from now on  
-`/stop` - Deactivates the bot. You won't receive any messages from the bot until you activate the bot again using the start comand
-
-**RSS Management**  
-`/add <url> <entryname>` - Adds a new subscription to your list.  
-`/remove <entryname>` - Removes an exisiting subscription from your list.  
-`/get <entryname> [optional: <count 1-10>]` - Manually parses your subscription, sending you the last <count> elements.  
-`/list` - Shows all your subscriptions as a list.
-
-**Other**  
-`/about` - Shows some information about RobotRSS Bot  
-`/help` - Shows the help menue
-
-## Feature Request and Contributing
-
-You have suggestions for improvements or features you miss? You are welcome to express all your wishes here. Just create a new [Issue][e872f832] and it will be taken care of quickly!
-
-[e872f832]: https://github.com/cbrgm/telegram-robot-rss/issues "RobotRSS Issues"
-
-If you are a developer yourself, you can also contribute code! Further information will follow shortly.
-
-## Installation
-
-The source code of RobotRSS is Open Source and openly accessible and editable. If you would like to use your own bot as newsfeed reader, you will find everything you need to install it here. It is recommended to run the bot in a docker container. You can find the latest, stable Docker Image on Dockerhub. If you make changes to the source code, you can easily create a new image of your version using the dockerfile located in the project folder.
-
-### Create a credentials file
-
-First, you must tell RobotRSS which bot the service is allowed to communicate with. Create a new telegram bot or use an existing one. All you need is the Bot's `Token` from Telegram. You can receive one from Telegrams [Botfather][db6676cf].
-
-Edit the `credentials.json` file located at `/resources/credentials.json`.
-
-```json
-{
-  "telegram_token": "INSERT TOKEN",
-  "update_interval": 300
-}
 ```
-  [db6676cf]: tg://resolve?domain=BotFather "Botfather"
+/add <адрес> <название>     подписаться на ленту
+/filter <название> <слова>  присылать только записи с этими словами (/filter <название> - — снять)
+/get <название> [1–10]      последние записи прямо сейчас
+/list                       подписки, с кнопками удаления
+/remove <название>          отписаться
+/stop, /start               поставить рассылку на паузу и включить
+```
 
-### Install Dependencies using pip
+## Что изменено по сравнению с оригиналом
 
-You can easily install all needed Dependencies using `pip`. Navigate into the project directory and run `pip install -r requirements.txt`. If you prefer installing all Dependencies manually you can find a detailed list of all needed packages at the "Dependencies" Section at the bottom of the page.
+**Переписано под современный стек**
+- Python 2.7 → 3.11+, python-telegram-bot 8.1 → aiogram 3, потоки → asyncio,
+  feedparser 5 → 6, загрузка лент через httpx;
+- из репозитория убрана закоммиченная папка виртуального окружения,
+  конфиг-файл с токеном заменён переменными окружения, Dockerfile обновлён.
 
-### Create a Docker Image
+**Исправлены ошибки оригинала**
+- лента скачивалась заново для каждого подписчика — теперь один раз на всех;
+- новые записи определялись по датам, а ленты без поля `updated` отвергались
+  целиком — теперь запоминаются уже отправленные записи по их id, даты не нужны;
+- при сбое ленты бот каждые 5 минут слал всем одно и то же сообщение об
+  ошибке — теперь предупреждает один раз, после нескольких сбоев подряд;
+- заголовки не экранировались: символ `<` или `&` в заголовке ломал отправку;
+- адрес ленты целиком переводился в нижний регистр, ломая адреса с
+  регистрозависимым путём;
+- пользователь, заблокировавший бота, больше не получает попыток отправки.
 
-You can easily run RobotRSS inside a Docker Container. The Dockerfile can be found in the project directory. Run `docker build --tag "RobotRSS:latest" .` to create a new Docker Image based on the current code.
+**Добавлено**
+- фильтр по словам для каждой подписки — с начала слова, чтобы «бот» находил
+  «бота» и «ботов», но не «работает»;
+- условные запросы (ETag / Last-Modified): если лента не менялась, сервер
+  отвечает 304 и ничего не скачивается;
+- при подписке архив ленты не присылается — только то, что появится дальше;
+- не больше N новых записей за обход (защита от наводнения после простоя);
+- кнопки удаления в `/list`, пауза рассылки без потери подписок.
 
-You can also pull the latest image from Dockerhub using `docker pull cynthek/RobotRSS:latest`.
-
-To start your docker container use the following commands, passing `BOT_TOKEN` and optional `UPDATE_INTERVAL` environment variable to the container:
+## Запуск
 
 ```bash
-docker run -itd --name "your-container-name" -e BOT_TOKEN="Enter your token" robotrss:latest
-# or use
-docker run -itd --name "your-container-name" -e BOT_TOKEN="Enter your token" -e UPDATE_INTERVAL=<Number in Minutes> robotrss:latest
+pip install -r requirements.txt
+BOT_TOKEN=123:abc python -m robotrss
 ```
 
-`UPDATE_INTERVAL` is set to 300 per default, updating feeds of subscribers every 5 minutes (300 sec).
+Или в Docker:
 
-## Python Version
+```bash
+docker build -t robotrss .
+docker run -d -e BOT_TOKEN=123:abc -v robotrss-data:/data robotrss
+```
 
-RobotRSS has been successfully tested with Python 2.7 .
+Настройки — переменные окружения: `BOT_TOKEN`, `DB_PATH`, `CHECK_INTERVAL`
+(секунд между обходами, по умолчанию 300), `MAX_PER_CHECK`, `FAILS_BEFORE_NOTICE`.
 
-## Dependencies
+## Тесты
 
-All Dependencies can be found in the `requirements.txt` file in the project directory.
+```bash
+pytest -v
+```
 
-## Motivation
+Разбор настоящих лент Хабра (RSS) и GitHub (Atom), лента без дат, ETag/304,
+обход с несколькими подписчиками и фильтрами, ограничение числа записей,
+предупреждение о сбое один раз, экранирование, команды бота — 25 тестов,
+без обращения к сети и к Telegram.
 
-This script was originally developed by [Christian Bargmann][b9824663] for practice purposes with Python.
+![Тесты](docs/screenshots/03-testy.png)
 
-  [b9824663]: http://cbrgm.de "blog"
+## Лицензия
+
+[Mozilla Public License 2.0](LICENSE.md), как у оригинала. Автор оригинального
+проекта — [cbrgm](https://github.com/cbrgm).
